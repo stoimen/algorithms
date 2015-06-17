@@ -1,0 +1,30 @@
+{
+  "name": "Algorithms",
+  "version": "1.0.0",
+  "description": "Algorithms and data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoimen/algorithms.git"
+  },
+  "keywords": [
+    "algorithms",
+    "data",
+    "structures",
+    "computer",
+    "science"
+  ],
+  "author": "popov@stoimen.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stoimen/algorithms/issues"
+  },
+  "homepage": "https://github.com/stoimen/algorithms#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jasmine": "^2.0.1"
+  }
+}
