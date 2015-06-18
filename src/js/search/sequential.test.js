@@ -1,4 +1,4 @@
-var sequential = require('./../search/sequential').sequential;
+var sequential = require('./../search/sequential');
 
 describe('Sequential search', function () {
 
