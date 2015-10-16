@@ -1,4 +1,4 @@
-var min = require('./../minmax/min');
+var min = require('../../src/minmax/min');
 
 describe('Minimum', function () {
 

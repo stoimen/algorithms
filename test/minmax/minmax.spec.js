@@ -1,4 +1,4 @@
-var minmax = require('./../minmax/minmax');
+var minmax = require('../../src/minmax/minmax');
 
 describe('Maximum and Maximum', function () {
 
