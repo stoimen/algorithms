@@ -4,7 +4,7 @@
   "description": "Algorithms and data structures",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/stoimen/algorithms#readme",
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-jasmine": "^2.0.1"
+    "jest": "^22.2.1"
   }
 }
