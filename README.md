@@ -1,8 +1,12 @@
 ## Algorithms
 
-GitHub port of my [blog posts on algorithms](http://www.stoimen.com/blog/category/algorithms/) intended to be covered on JS. Feel free to add algorithms written in different programming languages! 
+GitHub port of my [blog posts on algorithms](http://www.stoimen.com/blog/category/algorithms/) intended to be covered on JS. Feel free to add algorithms written in different programming languages!
 
 For more info visit the [wiki page](https://github.com/stoimen/algorithms/wiki)
+
+## Book!
+
+The book is getting there ...[infographic's on github](https://github.com/stoimen/infographics)
 
 ***
 
