@@ -6,7 +6,7 @@ For more info visit the [wiki page](https://github.com/stoimen/algorithms/wiki)
 
 ## Book!
 
-The book is getting there ...[infographic's on github](https://github.com/stoimen/infographics)
+The book is getting there ...[infographic are on github](https://github.com/stoimen/infographics)
 
 ***
 
