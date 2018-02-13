@@ -1,13 +1,9 @@
-var sequential = require('../../src/search/sequential')
+const search = require('./sequential')
 
-describe('Sequential search', () => {
+test(`find item in the list`, () => {
+  expect(search([1, 2, 3, 4, 6, 8], 4)).toBe(true)
+})
 
-  it('should find 4 in the list', () => {
-    expect(sequential([1, 2, 3, 4, 6, 8], 4)).toBe(true)
-  })
-
-  it(`shouldn't find 4 in the list`, () => {
-    expect(sequential([1,2,3,6,7,8,9,23], 4)).toBe(false)
-  })
-
+test(`don't find item in the list`, () => {
+  expect(search([1, 2, 3, 6, 7, 8, 9, 23], 4)).toBe(false)
 })
