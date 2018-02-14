@@ -1,13 +1,13 @@
-module.exports = (list) => {
-  let i = 0, l = list.length
+module.exports = (a) => {
+  let i = 0, l = a.length
 
   while (l > i++) {
     let j = i
     while (j--) {
-      if (list[j] > list[j+1]) {
-        [list[j], list[j+1]] = [list[j+1], list[j]]
+      if (a[j] > a[j+1]) {
+        [a[j], a[j+1]] = [a[j+1], a[j]]
       }
     }
   }
-  return list
+  return a
 }
