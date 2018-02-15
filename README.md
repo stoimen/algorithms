@@ -1,3 +1,4 @@
+![Build Status](https://travis-ci.org/stoimen/algorithms.svg?branch=master)
 ## Algorithms
 
 GitHub port of my [blog posts on algorithms](http://www.stoimen.com/blog/category/algorithms/) intended to be covered on JS. Feel free to add algorithms written in different programming languages!
