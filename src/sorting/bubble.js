@@ -1,3 +1,10 @@
+/**
+ * Sorts an array with bubble sort. Returns the sorted input array.
+ * @module sort/Bubble
+ * @type {Function}
+ * @param {Array} list - unsorted array
+ * @returns {Array} sorted array
+ */
 module.exports = (a) => {
   let i = 0, l = a.length
 

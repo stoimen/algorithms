@@ -5,6 +5,10 @@ GitHub port of my [blog posts on algorithms](http://www.stoimen.com/blog/categor
 
 For more info visit the [wiki page](https://github.com/stoimen/algorithms/wiki)
 
+## API Reference
+
+Find the API [here](https://stoimen.github.io/algorithms/)
+
 ## Book!
 
 The book is getting there ...[infographics are on github](https://github.com/stoimen/infographics)

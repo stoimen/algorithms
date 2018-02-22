@@ -4,6 +4,8 @@
   "description": "Algorithms and data structures",
   "main": "index.js",
   "scripts": {
+    "coverage": "npm test -- --coverage",
+    "doc": "jsdoc -c ./doc-config.json",
     "test": "jest"
   },
   "repository": {
@@ -24,6 +26,8 @@
   },
   "homepage": "https://github.com/stoimen/algorithms#readme",
   "devDependencies": {
-    "jest": "^22.2.1"
+    "jest": "^22.2.1",
+    "jsdoc": "^3.5.5",
+    "minami": "^1.2.3"
   }
 }
