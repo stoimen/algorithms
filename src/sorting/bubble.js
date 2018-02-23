@@ -1,20 +1,20 @@
 /**
- * Sorts an array with bubble sort. Returns the sorted input array.
+ * Sorts a List using bubble sort algorithm
  * @module sort/Bubble
  * @type {Function}
- * @param {Array} list - unsorted array
- * @returns {Array} sorted array
+ * @param {List} list unsorted array
  */
-module.exports = (a) => {
-  let i = 0, l = a.length
+module.exports = (list) => {
+  let left = list.head // stands for left pointer
 
-  while (l > i++) {
-    let j = i
-    while (j--) {
-      if (a[j] > a[j+1]) {
-        [a[j], a[j+1]] = [a[j+1], a[j]]
+  while (left) {
+    let right = left.prev
+    while (right) {
+      if (right.data > right.next.data) {
+        list.swap(right, right.next) // soft swap
       }
+      right = right.prev
     }
+    left = left.next
   }
-  return a
 }
