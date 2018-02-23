@@ -1,8 +1,30 @@
 /**
- * searches an element in array and returns boolean
+ * Returns a boolean for given object of class Node
+ * @typedef Predicate
+ * @type {Function}
+ * @param {Node} node
+ * @returns {Boolean}
+ * @example
+ * (node) => node.data === obj
+ */
+
+/**
+ * Sequential search looks for an item in a list by exploring all the items one by one. It's good when the list is not sorted.
  * @module search/Sequential
  * @type {Function}
- * @param {Array} list
- * @returns {Boolean} true if element is in list
+ * @param {List} list
+ * @param {Predicate} callback Called on each element
+ * @returns {Node|null} The Node if it's in the list or null otherwise
  */
-module.exports = (list, item) => list.indexOf(item) !== -1
+module.exports = (list, predicate) => {
+  let p = list.head
+
+  while (p) {
+    if (predicate(p)) {
+      return p
+    }
+    p = p.next
+  }
+
+  return null
+}
