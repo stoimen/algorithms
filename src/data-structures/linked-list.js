@@ -66,6 +66,16 @@ class List {
   }
 
   /**
+   * Implements a soft swap of two elements. Actual objects are the same just
+   * their 'data' property is swapped.
+   * @param {Node} left
+   * @param {Node} right
+   */
+  swap(left, right) {
+    [left.data, right.data] = [right.data, left.data]
+  }
+
+  /**
    * Returns all list nodes' data concatenated into a single string
    * @returns {String}
    */

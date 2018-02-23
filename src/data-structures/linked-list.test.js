@@ -3,6 +3,12 @@ const {Node, List} = require('./linked-list.js')
 let n1 = new Node(10)
 let n2 = new Node(20)
 
+afterEach(() => {
+  // restore
+  n1.data = 10
+  n2.data = 20
+})
+
 test('node', () => {
   let n1 = new Node()
   expect(n1.next).toBeNull()
@@ -80,10 +86,17 @@ test('map on list', () => {
 
   expect(n1.data).toEqual(5)
   expect(n2.data).toEqual(10)
+})
 
-  // restore
-  n1.data = 10
-  n2.data = 20
+test('swap', () => {
+  let l = new List()
+
+  l.push(n1)
+  l.push(n2)
+
+  l.swap(n1, n2)
+  expect(n1.data).toEqual(20)
+  expect(n2.data).toEqual(10)
 })
 
 test('toString', () => {
@@ -92,5 +105,5 @@ test('toString', () => {
   l.push(n1)
   l.push(n2)
 
-  console.log(l.toString())
+  expect(l.toString()).toEqual('10 20')
 })
