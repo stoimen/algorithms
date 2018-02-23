@@ -4,12 +4,12 @@ let n1 = new Node(10)
 let n2 = new Node(20)
 
 test('node', () => {
-  let data = { val: 10 }
-
   let n1 = new Node()
   expect(n1.next).toBeNull()
   expect(n1.prev).toBeNull()
   expect(n1.data).toBeNull()
+
+  let data = { val: 10 }
 
   let n2 = new Node(data)
   expect(n2.data).toBe(data)
@@ -17,8 +17,8 @@ test('node', () => {
 
 test('setting data and reference neighbors to a node', () => {
   let n = new Node(10)
-  let prev = new Node(5)
-  let next = new Node(15)
+  let prev = new Node()
+  let next = new Node()
   let data = { val: 10 }
 
   n.prev = prev
@@ -68,4 +68,29 @@ test('popping from a linked list', () => {
   expect(l.pop()).toBe(n1)
   expect(l.head).toBeNull()
   expect(l.tail).toBeNull()
+})
+
+test('map on list', () => {
+  let l = new List()
+
+  l.push(n1)
+  l.push(n2)
+
+  l.map((node) => node.data /= 2)
+
+  expect(n1.data).toEqual(5)
+  expect(n2.data).toEqual(10)
+
+  // restore
+  n1.data = 10
+  n2.data = 20
+})
+
+test('toString', () => {
+  let l = new List()
+
+  l.push(n1)
+  l.push(n2)
+
+  console.log(l.toString())
 })
