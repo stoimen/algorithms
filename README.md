@@ -11,7 +11,7 @@ Find the API [here](https://stoimen.github.io/algorithms/)
 
 ## Book!
 
-The book is getting there ...[infographics are on github](https://github.com/stoimen/infographics)
+The book is getting there ...[the infographics are on github](https://github.com/stoimen/infographics)
 
 ***
 
