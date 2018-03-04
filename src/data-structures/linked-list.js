@@ -9,6 +9,31 @@ class Node {
     this.next = null
     this.prev = null
   }
+
+  /**
+   * inserts after the Node
+   * @param {Node} node
+   */
+  insertAfter(node) {
+    let next = node.next
+
+    this.next = next
+    this.prev = node
+    node.next = this
+  }
+
+  /**
+   *
+   * @param {Node} node
+   */
+  insertBefore(node) {
+    let prev = node.prev
+
+    this.next = node
+    this.prev = prev
+    node.prev = this
+  }
+
 }
 
 class List {
@@ -73,6 +98,20 @@ class List {
    */
   swap(left, right) {
     [left.data, right.data] = [right.data, left.data]
+  }
+
+  /**
+   * removes a Node from the List
+   * @param {Node} node
+   */
+  remove(node) {
+    let prev = node.prev
+    let next = node.next
+
+    prev.next = next
+    next.prev = prev
+
+    return node
   }
 
   /**

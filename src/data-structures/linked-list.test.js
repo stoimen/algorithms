@@ -1,12 +1,11 @@
 const {Node, List} = require('./linked-list.js')
 
-let n1 = new Node(10)
-let n2 = new Node(20)
+let n1, n2, n3
 
-afterEach(() => {
-  // restore
-  n1.data = 10
-  n2.data = 20
+beforeEach(() => {
+  n1 = new Node(10)
+  n2 = new Node(20)
+  n3 = new Node(30)
 })
 
 test('node', () => {
@@ -19,6 +18,22 @@ test('node', () => {
 
   let n2 = new Node(data)
   expect(n2.data).toBe(data)
+})
+
+test('insert after node', () => {
+  n2.insertAfter(n1)
+
+  expect(n2.prev).toBe(n1)
+  expect(n1.next).toBe(n2)
+  expect(n2.next).toBeNull()
+})
+
+test('insert before node', () => {
+  n2.insertBefore(n1)
+
+  expect(n2.next).toBe(n1)
+  expect(n1.prev).toBe(n2)
+  expect(n2.prev).toBeNull()
 })
 
 test('setting data and reference neighbors to a node', () => {
@@ -97,6 +112,18 @@ test('swap', () => {
   l.swap(n1, n2)
   expect(n1.data).toEqual(20)
   expect(n2.data).toEqual(10)
+})
+
+test('remove', () => {
+  let l = new List()
+  let n3 = new Node(30)
+
+  l.push(n1)
+  l.push(n2)
+  l.push(n3)
+
+  expect(l.remove(n2)).toBe(n2)
+  expect(l.toString()).toEqual('10 30')
 })
 
 test('toString', () => {
