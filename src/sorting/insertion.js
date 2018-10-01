@@ -2,7 +2,8 @@
  * Sorts a List using insertion sort algorithm
  * @module sort/Insertion
  * @type {Function}
- * @param {List} list unsorted array
+ * @param {List} list - unsorted list
+ * @param {Function} predicate - callback function defining how to compare two elements of the list
  */
 module.exports = (list, predicate) => {
   let left = list.head

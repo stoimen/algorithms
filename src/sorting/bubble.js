@@ -5,7 +5,7 @@
  * @param {List} list unsorted array
  */
 module.exports = (list) => {
-  let left = list.head // stands for left pointer
+  let left = list.head
 
   while (left) {
     let right = left.prev

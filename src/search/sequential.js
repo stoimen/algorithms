@@ -13,7 +13,7 @@
  * @module search/Sequential
  * @type {Function}
  * @param {List} list
- * @param {Predicate} callback Called on each element
+ * @param {Function} callback Called on each element
  * @returns {Node|null} The Node if it's in the list or null otherwise
  */
 module.exports = (list, predicate) => {
