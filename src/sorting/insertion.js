@@ -1,19 +1,20 @@
 /**
- * sorts an array using insertion sort
+ * Sorts a List using insertion sort algorithm
  * @module sort/Insertion
- * @param {Array} list
- * @returns {Array} the sorted list
+ * @type {Function}
+ * @param {List} list unsorted array
  */
-module.exports = (a) => {
+module.exports = (list, predicate) => {
+  let left = list.head
 
-  for (let i = 1; i < a.length; i++) {
-    let k = a[i], j = i
-
-    while (j-- && a[j] > k) {
-      a[j + 1] = a[j]
+  while (left) {
+    let right = left.prev
+    while (right) {
+      if (predicate(right, left)) {
+        list.swap(right, left) // soft swap
+      }
+      right = right.prev
     }
-    a[j + 1] = k
+    left = left.next
   }
-
-  return a
 }
