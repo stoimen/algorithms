@@ -29,5 +29,9 @@
     "jest": "^22.2.1",
     "jsdoc": "^3.5.5",
     "minami": "^1.2.3"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost"
   }
 }
