@@ -3,14 +3,15 @@
  * @module sort/Bubble
  * @type {Function}
  * @param {List} list unsorted array
+ * @param {Function} predicate - callback function defining how to compare two elements of the list
  */
-module.exports = (list) => {
+module.exports = (list, predicate) => {
   let left = list.head
 
   while (left) {
     let right = left.prev
     while (right) {
-      if (right.data > right.next.data) {
+      if (predicate(right, right.next)) {
         list.swap(right, right.next) // soft swap
       }
       right = right.prev

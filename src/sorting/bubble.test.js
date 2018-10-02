@@ -1,5 +1,5 @@
 const sort = require('./bubble')
-const {Node, List} = require('../data-structures/linked-list')
+const { Node, List } = require('../data-structures/linked-list')
 
 test('bubble sort', () => {
   let n1 = new Node(1)
@@ -13,6 +13,8 @@ test('bubble sort', () => {
   l.push(n1)
   l.push(n2)
 
-  sort(l)
+  sort(l, (left, right) => {
+    return left.data > right.data
+  })
   expect(l.toString()).toEqual('1 2 3')
 })
