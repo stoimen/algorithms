@@ -1,4 +1,5 @@
-const {Node, List} = require('./linked-list.js')
+const Node = require('./list-node')
+const List = require('./linked-list')
 
 let n1, n2, n3
 
@@ -97,7 +98,7 @@ test('map on list', () => {
   l.push(n1)
   l.push(n2)
 
-  l.map((node) => node.data /= 2)
+  l.map((node) => (node.data /= 2))
 
   expect(n1.data).toEqual(5)
   expect(n2.data).toEqual(10)

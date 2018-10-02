@@ -1,43 +1,4 @@
-class Node {
-
-  /**
-   * Creates a Node with two pointers (next and prev) and data.
-   * @param {*} data anything
-   */
-  constructor(data = null) {
-    this.data = data
-    this.next = null
-    this.prev = null
-  }
-
-  /**
-   * inserts after the Node
-   * @param {Node} node
-   */
-  insertAfter(node) {
-    let next = node.next
-
-    this.next = next
-    this.prev = node
-    node.next = this
-  }
-
-  /**
-   *
-   * @param {Node} node
-   */
-  insertBefore(node) {
-    let prev = node.prev
-
-    this.next = node
-    this.prev = prev
-    node.prev = this
-  }
-
-}
-
 class List {
-
   /**
    * Creates an empty List
    */
@@ -52,8 +13,7 @@ class List {
    */
   push(node) {
     if (this.head === null) {
-      this.head =
-      this.tail = node
+      this.head = this.tail = node
     } else {
       let t = this.tail
       t.next = node
@@ -97,7 +57,7 @@ class List {
    * @param {Node} right
    */
   swap(left, right) {
-    [left.data, right.data] = [right.data, left.data]
+    ;[left.data, right.data] = [right.data, left.data]
   }
 
   /**
@@ -126,4 +86,4 @@ class List {
   }
 }
 
-module.exports = {Node, List}
+module.exports = List

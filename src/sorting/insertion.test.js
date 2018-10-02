@@ -1,5 +1,6 @@
 const sort = require('./insertion')
-const { Node, List } = require('../data-structures/linked-list')
+const Node = require('../data-structures/list-node')
+const List = require('../data-structures/linked-list')
 
 test('insertion sort', () => {
   let n1 = new Node(1)
