@@ -1,6 +1,6 @@
 const search = require('./sequential')
 const List = require('../data-structures/linked-list')
-const Node = require('../data-structures/list-node')
+const Node = require('../data-structures/node')
 
 test('sequential search', () => {
   let list = new List()

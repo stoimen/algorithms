@@ -1,5 +1,5 @@
 const sort = require('./bubble')
-const Node = require('../data-structures/list-node')
+const Node = require('../data-structures/node')
 const List = require('../data-structures/linked-list')
 
 test('bubble sort', () => {

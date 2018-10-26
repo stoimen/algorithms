@@ -8,33 +8,55 @@ class List {
   }
 
   /**
-   * Pushes a Node to the List
+   * Inserts a node after target
+   *
+   * @param {Node} target
    * @param {Node} node
    */
-  push(node) {
-    if (this.head === null) {
-      this.head = this.tail = node
+  insertAfter(target, node) {
+    if (target && target.next) {
+      let _p = target.next
+
+      node.next = target.next
+      node.prev = target
+
+      target.next = node
+      _p.prev = node
+
+      return node
     } else {
-      let t = this.tail
-      t.next = node
-      node.prev = t
-      this.tail = node
+      return this.push(node)
     }
   }
 
   /**
-   * Pops a Node from the List
-   * @returns {Node} the popped element
+   * Inserts a node before target
+   *
+   * @param {Node} target
+   * @param {Node} node
    */
-  pop() {
-    let t = this.tail
-    this.tail = this.tail.prev
-
-    if (this.tail === null) {
-      this.head = this.tail
+  insertBefore(target, node) {
+    if (!target) {
+      return this.push(node)
     }
 
-    return t
+    if (!target.prev) {
+      node.next = target
+      target.prev = node
+      this.head = node
+
+      return node
+    }
+
+    let _p = target.prev
+
+    node.prev = target.prev
+    node.next = target
+
+    target.prev = node
+    _p.next = node
+
+    return node
   }
 
   /**
@@ -51,13 +73,20 @@ class List {
   }
 
   /**
-   * Implements a soft swap of two elements. Actual objects are the same just
-   * their 'data' property is swapped.
-   * @param {Node} left
-   * @param {Node} right
+   * Pushes a Node to the end of the List
+   * @param {Node} node
    */
-  swap(left, right) {
-    ;[left.data, right.data] = [right.data, left.data]
+  push(node) {
+    if (this.head === null) {
+      this.head = this.tail = node
+    } else {
+      let _t = this.tail
+      _t.next = node
+      node.prev = _t
+      this.tail = node
+    }
+
+    return node
   }
 
   /**
@@ -65,13 +94,25 @@ class List {
    * @param {Node} node
    */
   remove(node) {
-    let prev = node.prev
-    let next = node.next
+    let _prev = node.prev
+    let _next = node.next
 
-    prev.next = next
-    next.prev = prev
+    _prev.next = _next
+    _next.prev = _prev
+
+    node.prev = node.next = null
 
     return node
+  }
+
+  /**
+   * Implements a soft swap of two elements. Actual objects are the same just
+   * their 'data' property is swapped.
+   * @param {Node} left
+   * @param {Node} right
+   */
+  swap(left, right) {
+    ;[left.data, right.data] = [right.data, left.data]
   }
 
   /**
