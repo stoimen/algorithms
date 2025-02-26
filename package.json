@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/stoimen/algorithms#readme",
   "devDependencies": {
-    "jest": "^22.2.1",
-    "jsdoc": "^3.5.5",
+    "jest": "^29.7.0",
+    "jsdoc": "^4.0.4",
     "minami": "^1.2.3"
   },
   "jest": {
