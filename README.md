@@ -1,3 +1,5 @@
+![Example](https://github.com/stoimen/algorithms/actions/workflows/node.js.yml/badge.svg)
+
 ## Algorithms
 
 GitHub port of my [blog posts on algorithms](http://www.stoimen.com/category/algorithms/) intended to be covered on JS. Feel free to add algorithms written in different programming languages!
