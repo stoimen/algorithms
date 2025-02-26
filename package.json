@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "coverage": "npm test -- --coverage",
-    "doc": "jsdoc -c ./doc-config.json",
     "test": "jest"
   },
   "repository": {
@@ -26,9 +25,7 @@
   },
   "homepage": "https://github.com/stoimen/algorithms#readme",
   "devDependencies": {
-    "jest": "^29.7.0",
-    "jsdoc": "^4.0.4",
-    "minami": "^1.2.3"
+    "jest": "^29.7.0"
   },
   "jest": {
     "verbose": true,
