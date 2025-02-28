@@ -5,7 +5,10 @@ import insertionSort from './insertionSort'
 describe('insertionSort', () => {
   // Error conditions
   it('should throw a TypeError if list is not provided', () => {
-    expect(() => insertionSort(null as any, (a: Node<number>, b: Node<number>) => a.data > b.data)).toThrow(TypeError)
+    expect(() => insertionSort(
+      null as any,
+      (a: Node<number>, b: Node<number>) => a.data > b.data)
+    ).toThrow(TypeError)
   })
 
   it('should throw a TypeError if predicate is not a function', () => {
@@ -73,7 +76,7 @@ describe('insertionSort', () => {
     list.push(new Node(3))
 
     insertionSort(list, (a, b) => a.data > b.data)
-    
+
     // Expected sorted order: 1, 1, 2, 3, 3
     expect(list.toString()).toBe('1 1 2 3 3')
   })

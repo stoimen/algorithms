@@ -5,7 +5,11 @@ import bubbleSort from './bubbleSort'
 describe('bubbleSort', () => {
   // Error conditions
   it('should throw a TypeError if list is not provided', () => {
-    expect(() => bubbleSort(null as any, (a: Node<number>, b: Node<number>) => a.data > b.data)).toThrow(TypeError)
+    expect(() =>
+      bubbleSort(
+        null as any,
+        (a: Node<number>, b: Node<number>) => a.data > b.data)
+    ).toThrow(TypeError)
   })
 
   it('should throw a TypeError if predicate is not provided or not a function', () => {

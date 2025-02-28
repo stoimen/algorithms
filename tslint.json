@@ -7,7 +7,7 @@
   "jsRules": {},
   "rules": {
     "semicolon": [true, "never"],
-    "max-line-length": [true, 80],
+    "max-line-length": [true, 100],
     "trailing-comma": [false],
     "quotemark": [true, "single"],
     "no-console": false,

@@ -4,6 +4,16 @@
  */
 class Node<T> {
   /**
+   * Creates a Node from an object.
+   * @param {Object} obj - The object to create a node from.
+   * @param {T} obj.data - The data to store in the node.
+   * @returns {Node<T>} The created node.
+   */
+  static fromObject<T>(obj: { data: T }): Node<T> {
+    return new Node(obj.data)
+  }
+  
+  /**
    * @property {T} data - The data stored in the node.
    */
   data: T
@@ -42,16 +52,6 @@ class Node<T> {
    */
   setPrev(prevNode: Node<T> | null): void {
     this.prev = prevNode
-  }
-
-  /**
-   * Creates a Node from an object.
-   * @param {Object} obj - The object to create a node from.
-   * @param {T} obj.data - The data to store in the node.
-   * @returns {Node<T>} The created node.
-   */
-  static fromObject<T>(obj: { data: T }): Node<T> {
-    return new Node(obj.data)
   }
 }
 

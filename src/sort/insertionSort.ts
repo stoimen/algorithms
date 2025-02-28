@@ -8,8 +8,9 @@ import Node from '../data-structures/node'
  * re-inserts the node there.
  *
  * @param list - The linked list to sort.
- * @param predicate - A comparison function that returns true if the first node should come after the second.
- *                    For example, (a, b) => a.data > b.data will sort numbers in ascending order.
+ * @param predicate - 
+ * A comparison function that returns true if the first node should come after the second.
+ * For example, (a, b) => a.data > b.data will sort numbers in ascending order.
  * @throws {TypeError} If the list or predicate is not provided or invalid.
  */
 function insertionSort<T>(

@@ -163,6 +163,7 @@ describe('List', () => {
 
   describe('swap', () => {
     it('should swap the data of two nodes', () => {
+      // Build list: node1 -> node2
       const node1 = new Node(1)
       const node2 = new Node(2)
       list.push(node1)
@@ -178,88 +179,88 @@ describe('List', () => {
   describe('fromArray', () => {
     it('should create a list from an array of elements', () => {
       const array = [1, 2, 3, 4]
-      const list = new List<number>()
-      list.fromArray(array)
+      const linkedList = new List<number>()
+      linkedList.fromArray(array)
 
       const result = [] as number[]
-      list.map((node) => result.push(node.data))
+      linkedList.map((node) => result.push(node.data))
 
       expect(result).toEqual(array)
     })
 
     it('should handle an empty array', () => {
       const array: number[] = []
-      const list = new List<number>()
-      list.fromArray(array)
+      const linkedList = new List<number>()
+      linkedList.fromArray(array)
 
-      expect(list.head).toBeNull()
-      expect(list.tail).toBeNull()
+      expect(linkedList.head).toBeNull()
+      expect(linkedList.tail).toBeNull()
     })
 
     it('should correctly set head and tail for a single element array', () => {
       const array = [42]
-      const list = new List<number>()
-      list.fromArray(array)
+      const linkedList = new List<number>()
+      linkedList.fromArray(array)
 
-      expect(list.head).not.toBeNull()
-      expect(list.tail).not.toBeNull()
-      expect(list.head).toBe(list.tail)
-      expect(list.head?.data).toBe(42)
+      expect(linkedList.head).not.toBeNull()
+      expect(linkedList.tail).not.toBeNull()
+      expect(linkedList.head).toBe(linkedList.tail)
+      expect(linkedList.head?.data).toBe(42)
     })
 
     it('should correctly link nodes', () => {
       const array = [1, 2, 3]
-      const list = new List<number>()
-      list.fromArray(array)
+      const linkedList = new List<number>()
+      linkedList.fromArray(array)
 
-      expect(list.head?.data).toBe(1)
-      expect(list.head?.next?.data).toBe(2)
-      expect(list.head?.next?.next?.data).toBe(3)
-      expect(list.head?.next?.next?.next).toBeNull()
+      expect(linkedList.head?.data).toBe(1)
+      expect(linkedList.head?.next?.data).toBe(2)
+      expect(linkedList.head?.next?.next?.data).toBe(3)
+      expect(linkedList.head?.next?.next?.next).toBeNull()
 
-      expect(list.tail?.data).toBe(3)
-      expect(list.tail?.prev?.data).toBe(2)
-      expect(list.tail?.prev?.prev?.data).toBe(1)
-      expect(list.tail?.prev?.prev?.prev).toBeNull()
+      expect(linkedList.tail?.data).toBe(3)
+      expect(linkedList.tail?.prev?.data).toBe(2)
+      expect(linkedList.tail?.prev?.prev?.data).toBe(1)
+      expect(linkedList.tail?.prev?.prev?.prev).toBeNull()
     })
   })
 
   describe('toArray', () => {
     it('should return an array of all list nodes\' data', () => {
-      const list = new List<number>()
-      list.push(new Node(1))
-      list.push(new Node(2))
-      list.push(new Node(3))
+      const linkedList = new List<number>()
+      linkedList.push(new Node(1))
+      linkedList.push(new Node(2))
+      linkedList.push(new Node(3))
 
-      const result = list.toArray()
+      const result = linkedList.toArray()
 
       expect(result).toEqual([1, 2, 3])
     })
 
     it('should return an empty array when the list is empty', () => {
-      const list = new List<number>()
+      const linkedList = new List<number>()
 
-      const result = list.toArray()
+      const result = linkedList.toArray()
 
       expect(result).toEqual([])
     })
 
     it('should handle a list with a single node', () => {
-      const list = new List<number>()
-      list.push(new Node(42))
+      const linkedList = new List<number>()
+      linkedList.push(new Node(42))
 
-      const result = list.toArray()
+      const result = linkedList.toArray()
 
       expect(result).toEqual([42])
     })
 
     it('should correctly handle a list with multiple nodes', () => {
-      const list = new List<string>()
-      list.push(new Node('a'))
-      list.push(new Node('b'))
-      list.push(new Node('c'))
+      const linkedList = new List<string>()
+      linkedList.push(new Node('a'))
+      linkedList.push(new Node('b'))
+      linkedList.push(new Node('c'))
 
-      const result = list.toArray()
+      const result = linkedList.toArray()
 
       expect(result).toEqual(['a', 'b', 'c'])
     })
