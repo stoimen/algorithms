@@ -53,13 +53,13 @@ describe('insertionSort', () => {
   // Sorting strings
   it('should sort a list of strings alphabetically', () => {
     const list = new List<string>()
-    list.push(new Node("banana"))
-    list.push(new Node("apple"))
-    list.push(new Node("cherry"))
+    list.push(new Node('banana'))
+    list.push(new Node('apple'))
+    list.push(new Node('cherry'))
 
     // Using localeCompare to determine alphabetical order.
     insertionSort(list, (a, b) => a.data.localeCompare(b.data) > 0)
-    const expected = `${JSON.stringify("apple")} ${JSON.stringify("banana")} ${JSON.stringify("cherry")}`
+    const expected = `${JSON.stringify('apple')} ${JSON.stringify('banana')} ${JSON.stringify('cherry')}`
     expect(list.toString()).toBe(expected)
   })
 

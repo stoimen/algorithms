@@ -6,26 +6,26 @@ class Node<T> {
   /**
    * @property {T} data - The data stored in the node.
    */
-  data: T;
+  data: T
 
   /**
    * @property {Node<T> | null} next - Pointer to the next node in the list.
    */
-  next: Node<T> | null;
+  next: Node<T> | null
 
   /**
    * @property {Node<T> | null} prev - Pointer to the previous node in the list.
    */
-  prev: Node<T> | null;
+  prev: Node<T> | null
 
   /**
    * Creates a Node with two pointers (next and prev) and data.
    * @param {T} data - The data to store in the node.
    */
   constructor(data: T) {
-    this.data = data;
-    this.next = null;
-    this.prev = null;
+    this.data = data
+    this.next = null
+    this.prev = null
   }
 
   /**
@@ -33,7 +33,7 @@ class Node<T> {
    * @param {Node<T> | null} nextNode - The next node in the list.
    */
   setNext(nextNode: Node<T> | null): void {
-    this.next = nextNode;
+    this.next = nextNode
   }
 
   /**
@@ -41,7 +41,7 @@ class Node<T> {
    * @param {Node<T> | null} prevNode - The previous node in the list.
    */
   setPrev(prevNode: Node<T> | null): void {
-    this.prev = prevNode;
+    this.prev = prevNode
   }
 
   /**
@@ -51,8 +51,8 @@ class Node<T> {
    * @returns {Node<T>} The created node.
    */
   static fromObject<T>(obj: { data: T }): Node<T> {
-    return new Node(obj.data);
+    return new Node(obj.data)
   }
 }
 
-export default Node;
+export default Node

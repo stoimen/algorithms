@@ -42,67 +42,71 @@ describe('List', () => {
   })
 
   describe('insertAfter', () => {
-    it('should insert a node after a target when the target has a next node', () => {
-      // Build list: node1 -> node2
-      const node1 = new Node(1)
-      const node2 = new Node(2)
-      list.push(node1)
-      list.push(node2)
+    it('should insert a node after a target when the target has a next node',
+      () => {
+        // Build list: node1 -> node2
+        const node1 = new Node(1)
+        const node2 = new Node(2)
+        list.push(node1)
+        list.push(node2)
 
-      // Insert node3 after node1: node1 -> node3 -> node2
-      const node3 = new Node(3)
-      list.insertAfter(node1, node3)
+        // Insert node3 after node1: node1 -> node3 -> node2
+        const node3 = new Node(3)
+        list.insertAfter(node1, node3)
 
-      expect(node1.next).toBe(node3)
-      expect(node3.prev).toBe(node1)
-      expect(node3.next).toBe(node2)
-      expect(node2.prev).toBe(node3)
-      expect(list.tail).toBe(node2)
-    })
+        expect(node1.next).toBe(node3)
+        expect(node3.prev).toBe(node1)
+        expect(node3.next).toBe(node2)
+        expect(node2.prev).toBe(node3)
+        expect(list.tail).toBe(node2)
+      })
 
-    it('should insert a node after a target when the target is the tail', () => {
-      const node1 = new Node(1)
-      list.push(node1)
+    it('should insert a node after a target when the target is the tail',
+      () => {
+        const node1 = new Node(1)
+        list.push(node1)
 
-      // node1 is tail, so insertAfter should push node2 to the end.
-      const node2 = new Node(2)
-      list.insertAfter(node1, node2)
+        // node1 is tail, so insertAfter should push node2 to the end.
+        const node2 = new Node(2)
+        list.insertAfter(node1, node2)
 
-      expect(node1.next).toBe(node2)
-      expect(node2.prev).toBe(node1)
-      expect(list.tail).toBe(node2)
-    })
+        expect(node1.next).toBe(node2)
+        expect(node2.prev).toBe(node1)
+        expect(list.tail).toBe(node2)
+      })
   })
 
   describe('insertBefore', () => {
-    it('should insert a node before a target when the target is the head', () => {
-      const node1 = new Node(1)
-      list.push(node1)
+    it('should insert a node before a target when the target is the head',
+      () => {
+        const node1 = new Node(1)
+        list.push(node1)
 
-      const node0 = new Node(0)
-      list.insertBefore(node1, node0)
+        const node0 = new Node(0)
+        list.insertBefore(node1, node0)
 
-      expect(list.head).toBe(node0)
-      expect(node0.next).toBe(node1)
-      expect(node1.prev).toBe(node0)
-    })
+        expect(list.head).toBe(node0)
+        expect(node0.next).toBe(node1)
+        expect(node1.prev).toBe(node0)
+      })
 
-    it('should insert a node before a target when the target is not the head', () => {
-      // Build list: node1 -> node2
-      const node1 = new Node(1)
-      const node2 = new Node(2)
-      list.push(node1)
-      list.push(node2)
+    it('should insert a node before a target when the target is not the head',
+      () => {
+        // Build list: node1 -> node2
+        const node1 = new Node(1)
+        const node2 = new Node(2)
+        list.push(node1)
+        list.push(node2)
 
-      // Insert node between node1 and node2: node1 -> node1_5 -> node2
-      const node1_5 = new Node(1.5)
-      list.insertBefore(node2, node1_5)
+        // Insert node between node1 and node2: node1 -> node1_5 -> node2
+        const node15 = new Node(1.5)
+        list.insertBefore(node2, node15)
 
-      expect(node1.next).toBe(node1_5)
-      expect(node1_5.prev).toBe(node1)
-      expect(node1_5.next).toBe(node2)
-      expect(node2.prev).toBe(node1_5)
-    })
+        expect(node1.next).toBe(node15)
+        expect(node15.prev).toBe(node1)
+        expect(node15.next).toBe(node2)
+        expect(node2.prev).toBe(node15)
+      })
   })
 
   describe('remove', () => {
@@ -262,15 +266,17 @@ describe('List', () => {
   })
 
   describe('toString', () => {
-    it('should return a concatenated string of JSON stringified node data', () => {
-      const node1 = new Node({ value: 1 })
-      const node2 = new Node({ value: 2 })
-      list.push(node1)
-      list.push(node2)
+    it('should return a concatenated string of JSON stringified node data',
+      () => {
+        const node1 = new Node({ value: 1 })
+        const node2 = new Node({ value: 2 })
+        list.push(node1)
+        list.push(node2)
 
-      const expectedString = `${JSON.stringify(node1.data)} ${JSON.stringify(node2.data)}`
-      expect(list.toString()).toBe(expectedString)
-    })
+        const expectedString =
+          `${JSON.stringify(node1.data)} ${JSON.stringify(node2.data)}`
+        expect(list.toString()).toBe(expectedString)
+      })
 
     it('should return an empty string for an empty list', () => {
       expect(list.toString()).toBe('')

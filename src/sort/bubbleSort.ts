@@ -23,14 +23,15 @@ function bubbleSort<T>(list: List<T>, predicate: (a: Node<T>, b: Node<T>) => boo
 
     while (right && right.next) {
       if (predicate(right, right.next)) {
-        list.swap(right, right.next) // soft swap
+        // soft swap (only data is swapped, no actual objects)
+        list.swap(right, right.next) 
         swapped = true
       }
       right = right.next
     }
-    
-    left = left?.next || null;
-  } while (swapped);
+
+    left = left?.next || null
+  } while (swapped)
 }
 
-export default bubbleSort;
+export default bubbleSort
