@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "coverage": "npm test -- --coverage",
+    "docs": "typedoc --options typedoc.json",
     "test": "jest"
   },
   "repository": {
@@ -25,10 +26,11 @@
   },
   "homepage": "https://github.com/stoimen/algorithms#readme",
   "devDependencies": {
-    "jest": "^29.7.0"
-  },
-  "jest": {
-    "verbose": true,
-    "testURL": "http://localhost"
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.5",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "typedoc": "^0.27.9",
+    "typescript": "^5.7.3"
   }
 }
