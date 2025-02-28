@@ -14,20 +14,21 @@ function bubbleSort<T>(list: List<T>, predicate: (a: Node<T>, b: Node<T>) => boo
     throw new TypeError('Invalid arguments: list and predicate are required');
   }
 
-  let left = list.head;
-  let swapped;
+  let left = list.head
+  let swapped: boolean
 
   do {
-    swapped = false;
-    let right = left;
+    swapped = false
+    let right = left
 
     while (right && right.next) {
       if (predicate(right, right.next)) {
-        list.swap(right, right.next); // soft swap
-        swapped = true;
+        list.swap(right, right.next) // soft swap
+        swapped = true
       }
-      right = right.next;
+      right = right.next
     }
+    
     left = left?.next || null;
   } while (swapped);
 }
