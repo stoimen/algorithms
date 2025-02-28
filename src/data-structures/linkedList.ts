@@ -127,6 +127,23 @@ class List<T> {
   }
 
   /**
+   * Fills the List with data from an array.
+   * @param {T[]} array - The array to fill the list with.
+   */
+  fromArray(array: T[]): void {
+    array.forEach((data) => this.push(new Node(data)))
+  }
+
+  /**
+   * @returns {T[]} An array of all list nodes' data.
+   */
+  toArray(): T[] {
+    const array: T[] = []
+    this.map((node) => array.push(node.data))
+    return array
+  } 
+
+  /**
    * Returns all list nodes' data concatenated into a single string.
    * @returns {String} The concatenated string of all nodes' data.
    */
